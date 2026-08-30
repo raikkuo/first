@@ -1,4 +1,4 @@
-const start = new Date("2026-08-01T15:00:00+08:00").getTime();
+const start = new Date("2026-08-01T15:00:00").getTime();
 
 function updateCounter() {
   const now = Date.now();
