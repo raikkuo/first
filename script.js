@@ -1,175 +1,218 @@
-// ==========================================
-// MONTHSARY COUNTER
-// ==========================================
+/* ==================================================
+   MONTHSARY DATE
+================================================== */
 
-// August 1, 2026 at 3:00 PM
-const start = new Date("2026-08-01T15:00:00").getTime();
+/*
+   August 1, 2026 at 3:00 PM
+
+   IMPORTANT:
+   The month starts at 3:00 PM.
+*/
+
+const startDate = new Date("2026-08-01T15:00:00");
+
+
+/* ==================================================
+   TIME COUNTER
+================================================== */
 
 function updateCounter() {
-  const now = Date.now();
 
-  // Prevent negative numbers if the website is opened before the start date
-  let diff = Math.max(0, now - start);
+  const now = new Date();
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  diff %= (1000 * 60 * 60 * 24);
+  let difference = now - startDate;
 
-  const hours = Math.floor(diff / (1000 * 60 * 60));
-  diff %= (1000 * 60 * 60);
 
-  const minutes = Math.floor(diff / (1000 * 60));
-  diff %= (1000 * 60);
+  /*
+     If the date has not happened yet,
+     show the remaining time instead.
+  */
 
-  const seconds = Math.floor(diff / 1000);
+  if (difference < 0) {
 
-  // Update the HTML
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+    difference = Math.abs(difference);
+
+    document.getElementById("counterLabel").textContent =
+      "until our beginning ♡";
+
+  } else {
+
+    document.getElementById("counterLabel").textContent =
+      "since our beginning ♡";
+
+  }
+
+
+  const totalSeconds =
+    Math.floor(difference / 1000);
+
+
+  const days =
+    Math.floor(totalSeconds / 86400);
+
+
+  const hours =
+    Math.floor(
+      (totalSeconds % 86400) / 3600
+    );
+
+
+  const minutes =
+    Math.floor(
+      (totalSeconds % 3600) / 60
+    );
+
+
+  const seconds =
+    totalSeconds % 60;
+
+
+  document.getElementById("days").textContent =
+    days;
+
+
+  document.getElementById("hours").textContent =
+    hours;
+
+
+  document.getElementById("minutes").textContent =
+    minutes;
+
+
+  document.getElementById("seconds").textContent =
+    seconds;
+
 }
 
-// Run immediately
+
+/*
+   Run immediately so the counter doesn't
+   wait one second before showing.
+*/
+
 updateCounter();
 
-// Update every second
+
+/*
+   Update every second.
+*/
+
 setInterval(updateCounter, 1000);
 
 
-// ==========================================
-// SECRET NOTE
-// ==========================================
+
+/* ==================================================
+   SECRET NOTE
+================================================== */
 
 function showSecret() {
-  const el = document.getElementById("secret");
 
-  if (el.style.display === "block") {
-    el.style.display = "none";
+  const secret =
+    document.getElementById("secret");
+
+
+  if (secret.style.display === "block") {
+
+    secret.style.display = "none";
+
   } else {
-    el.style.display = "block";
+
+    secret.style.display = "block";
+
   }
+
 }
 
 
-// ==========================================
-// LITTLE NOTES
-// ==========================================
+
+/* ==================================================
+   LITTLE NOTES
+================================================== */
 
 function openNote(note) {
-  // Don't allow an already-opened note to close again
+
+  /*
+     Once a note has been opened,
+     it stays opened.
+  */
+
   if (note.classList.contains("opened")) {
     return;
   }
 
+
   note.classList.remove("sealed");
+
   note.classList.add("opened");
 
-  note.setAttribute("aria-label", "Opened note");
 }
 
 
-// ==========================================
-// MEMORY JAR
-// ==========================================
 
-const memories = [
-  "The random conversations that somehow turn into our favorite talks.",
-
-  "That feeling when I see your name pop up on my screen.",
-
-  "The little jokes that probably wouldn't make sense to anyone else.",
-
-  "The moments where we can just be ourselves around each other.",
-
-  "A reminder that our story is made from lots of tiny moments, not just big ones.",
-
-  "One day, we'll look back at these early memories and smile.",
-
-  "You make ordinary moments feel worth keeping.",
-
-  "I'm grateful for every chance I get to know another little part of you.",
-
-  "First time we met."
-];
-
-function pickMemory() {
-  const result = document.getElementById("memoryResult");
-  const jar = document.getElementById("jar");
-
-  const memory =
-    memories[Math.floor(Math.random() * memories.length)];
-
-  result.innerHTML =
-    '<span class="tiny">a little memory</span>' +
-    "<p>" +
-    memory +
-    "</p>";
-
-  // Restart animation
-  result.classList.remove("pop");
-  void result.offsetWidth;
-  result.classList.add("pop");
-
-  // Shake the jar
-  jar.animate(
-    [
-      { transform: "rotate(0deg)" },
-      { transform: "rotate(-4deg)" },
-      { transform: "rotate(4deg)" },
-      { transform: "rotate(0deg)" }
-    ],
-    {
-      duration: 500
-    }
-  );
-}
-
-
-// ==========================================
-// AUDIO PLAYER
-// ==========================================
+/* ==================================================
+   SONG PLAYER
+================================================== */
 
 function togglePlay(card) {
-  const audio = card.querySelector("audio");
-  const btn = card.querySelector(".play-btn");
 
-  if (!audio) {
-    return;
-  }
+  const audio =
+    card.querySelector("audio");
 
-  // Pause every other song
-  document.querySelectorAll(".player-card").forEach((otherCard) => {
+  const playButton =
+    card.querySelector(".play-btn");
 
-    if (otherCard !== card) {
+
+  /*
+     Stop every other song first.
+  */
+
+  document
+    .querySelectorAll(".player-card")
+    .forEach(otherCard => {
 
       const otherAudio =
         otherCard.querySelector("audio");
 
-      const otherBtn =
+      const otherButton =
         otherCard.querySelector(".play-btn");
 
-      if (otherAudio) {
+
+      if (otherCard !== card) {
+
         otherAudio.pause();
+
+        otherAudio.currentTime = 0;
+
+        otherCard.classList.remove("playing");
+
+        otherButton.textContent = "▶";
+
       }
 
-      otherCard.classList.remove("playing");
+    });
 
-      if (otherBtn) {
-        otherBtn.textContent = "▶";
-      }
-    }
-  });
 
-  // Play / pause selected song
+  /*
+     Play / pause selected song.
+  */
+
   if (audio.paused) {
 
     audio.play()
       .then(() => {
+
         card.classList.add("playing");
-        btn.textContent = "❚❚";
+
+        playButton.textContent = "❚❚";
+
       })
-      .catch((error) => {
-        console.error("Audio could not be played:", error);
+      .catch(error => {
+
+        console.log(
+          "Audio could not play:",
+          error
+        );
+
       });
 
   } else {
@@ -178,12 +221,109 @@ function togglePlay(card) {
 
     card.classList.remove("playing");
 
-    btn.textContent = "▶";
+    playButton.textContent = "▶";
+
   }
 
-  // Reset button when song finishes
-  audio.onended = () => {
+
+  /*
+     When the song finishes,
+     reset the button.
+  */
+
+  audio.onended = function () {
+
     card.classList.remove("playing");
-    btn.textContent = "▶";
+
+    playButton.textContent = "▶";
+
   };
+
+}
+
+
+
+/* ==================================================
+   MEMORY JAR
+================================================== */
+
+const memories = [
+
+  "The little conversations that somehow turn into hours. ♡",
+
+  "That moment when we realized how comfortable we were with each other.",
+
+  "Every random joke that made us laugh way too much.",
+
+  "The little check-ins that make an ordinary day feel special.",
+
+  "Our first picture together. ♡",
+
+  "Our first date c:",
+
+  "Every time you make me smile without even trying.",
+
+  "The moments where we can just be ourselves together.",
+
+  "The little things about you that I keep remembering throughout the day.",
+
+  "One month with you already feels like such a beautiful memory. ♡"
+
+];
+
+
+function pickMemory() {
+
+  const result =
+    document.getElementById("memoryResult");
+
+
+  const randomIndex =
+    Math.floor(
+      Math.random() * memories.length
+    );
+
+
+  const memory =
+    memories[randomIndex];
+
+
+  result.innerHTML = `
+    <span class="tiny">a little memory ♡</span>
+    <p>${memory}</p>
+  `;
+
+
+  /*
+     Restart animation every time
+     the button is pressed.
+  */
+
+  result.classList.remove("pop");
+
+
+  void result.offsetWidth;
+
+
+  result.classList.add("pop");
+
+}
+
+
+
+/* ==================================================
+   CLICKING THE JAR
+================================================== */
+
+const jar =
+  document.getElementById("jar");
+
+
+if (jar) {
+
+  jar.addEventListener(
+    "click",
+    pickMemory
+  );
+
 }
