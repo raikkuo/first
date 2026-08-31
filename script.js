@@ -4,9 +4,6 @@
 
 /*
    August 1, 2026 at 3:00 PM
-
-   IMPORTANT:
-   The month starts at 3:00 PM.
 */
 
 const startDate = new Date("2026-08-01T15:00:00");
@@ -22,22 +19,24 @@ function updateCounter() {
 
   let difference = now - startDate;
 
+  const counterLabel =
+    document.getElementById("counterLabel");
 
   /*
      If the date has not happened yet,
-     show the remaining time instead.
+     show the remaining time.
   */
 
   if (difference < 0) {
 
     difference = Math.abs(difference);
 
-    document.getElementById("counterLabel").textContent =
+    counterLabel.textContent =
       "until our beginning ♡";
 
   } else {
 
-    document.getElementById("counterLabel").textContent =
+    counterLabel.textContent =
       "since our beginning ♡";
 
   }
@@ -70,14 +69,11 @@ function updateCounter() {
   document.getElementById("days").textContent =
     days;
 
-
   document.getElementById("hours").textContent =
     hours;
 
-
   document.getElementById("minutes").textContent =
     minutes;
-
 
   document.getElementById("seconds").textContent =
     seconds;
@@ -85,20 +81,9 @@ function updateCounter() {
 }
 
 
-/*
-   Run immediately so the counter doesn't
-   wait one second before showing.
-*/
-
 updateCounter();
 
-
-/*
-   Update every second.
-*/
-
 setInterval(updateCounter, 1000);
-
 
 
 /* ==================================================
@@ -109,7 +94,6 @@ function showSecret() {
 
   const secret =
     document.getElementById("secret");
-
 
   if (secret.style.display === "block") {
 
@@ -124,7 +108,6 @@ function showSecret() {
 }
 
 
-
 /* ==================================================
    LITTLE NOTES
 ================================================== */
@@ -132,7 +115,7 @@ function showSecret() {
 function openNote(note) {
 
   /*
-     Once a note has been opened,
+     Once a note is opened,
      it stays opened.
   */
 
@@ -140,13 +123,11 @@ function openNote(note) {
     return;
   }
 
-
   note.classList.remove("sealed");
 
   note.classList.add("opened");
 
 }
-
 
 
 /* ==================================================
@@ -163,7 +144,7 @@ function togglePlay(card) {
 
 
   /*
-     Stop every other song first.
+     Stop every other song.
   */
 
   document
@@ -227,8 +208,7 @@ function togglePlay(card) {
 
 
   /*
-     When the song finishes,
-     reset the button.
+     Reset when song finishes.
   */
 
   audio.onended = function () {
@@ -240,7 +220,6 @@ function togglePlay(card) {
   };
 
 }
-
 
 
 /* ==================================================
@@ -295,24 +274,20 @@ function pickMemory() {
 
 
   /*
-     Restart animation every time
-     the button is pressed.
+     Restart animation.
   */
 
   result.classList.remove("pop");
 
-
   void result.offsetWidth;
-
 
   result.classList.add("pop");
 
 }
 
 
-
 /* ==================================================
-   CLICKING THE JAR
+   CLICKING / KEYBOARD ON JAR
 ================================================== */
 
 const jar =
@@ -324,6 +299,25 @@ if (jar) {
   jar.addEventListener(
     "click",
     pickMemory
+  );
+
+
+  jar.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
+
+        event.preventDefault();
+
+        pickMemory();
+
+      }
+
+    }
   );
 
 }
