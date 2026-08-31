@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f7dfe5">
-  <title>a little somthing for you :p</title>
+  <meta name="description" content="A little monthsary website made with love.">
+  <title>a little something for you :p</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="nav">
   <div class="nav-inner">
@@ -18,6 +24,7 @@
     <a href="#songs">Songs</a>
     <a href="#memories">Memories</a>
     <a href="#gallery">Polaroids</a>
+    <a href="#letter">Letter</a>
   </div>
 </nav>
 
@@ -42,10 +49,7 @@
       August 1, 2026 · 3:00 PM
     </div>
 
-
-    <!-- TIME COUNTER -->
-
-    <div class="counter-grid" id="counter">
+    <div class="counter-grid">
 
       <div class="counter">
         <strong id="days">0</strong>
@@ -73,10 +77,7 @@
       since our beginning ♡
     </p>
 
-
-    <!-- SECRET BUTTON -->
-
-    <button class="button" onclick="showSecret()">
+    <button class="button" type="button" onclick="showSecret()">
       tap for a little note
     </button>
 
@@ -89,7 +90,6 @@
 </header>
 
 
-
 <!-- =========================
      THINGS I LOVE
 ========================= -->
@@ -97,21 +97,14 @@
 <section id="reasons">
 
   <div class="section-head">
+    <div class="tiny">little things</div>
 
-    <div class="tiny">
-      little things
-    </div>
-
-    <h2>
-      Things I Love About You
-    </h2>
+    <h2>Things I Love About You</h2>
 
     <p>
       everything i love about you.
     </p>
-
   </div>
-
 
   <div class="grid">
 
@@ -123,7 +116,6 @@
       </p>
     </article>
 
-
     <article class="card reason">
       <span>☼</span>
       <h3>Your presence</h3>
@@ -131,7 +123,6 @@
         Even an ordinary day feels a little better when I get to share it with you.
       </p>
     </article>
-
 
     <article class="card reason">
       <span>✦</span>
@@ -141,7 +132,6 @@
       </p>
     </article>
 
-
     <article class="card reason">
       <span>☁</span>
       <h3>How you make me laugh</h3>
@@ -150,7 +140,6 @@
       </p>
     </article>
 
-
     <article class="card reason">
       <span>♡</span>
       <h3>Your honesty</h3>
@@ -158,7 +147,6 @@
         I appreciate being able to talk, listen, and understand each other better.
       </p>
     </article>
-
 
     <article class="card reason">
       <span>∞</span>
@@ -173,7 +161,6 @@
 </section>
 
 
-
 <!-- =========================
      NOTES
 ========================= -->
@@ -182,13 +169,9 @@
 
   <div class="section-head">
 
-    <div class="tiny">
-      tap to open
-    </div>
+    <div class="tiny">tap to open</div>
 
-    <h2>
-      Little Notes
-    </h2>
+    <h2>Little Notes</h2>
 
     <p>
       notes that would make you feel better.
@@ -196,29 +179,24 @@
 
   </div>
 
-
   <div class="grid notes-grid">
-
 
     <button
       class="card note sealed"
+      type="button"
       onclick="openNote(this)"
       aria-label="Open note: when you're tired"
     >
 
       <div class="seal">♡</div>
 
-      <h3>
-        Open when you're tired
-      </h3>
+      <h3>Open when you're tired</h3>
 
       <div class="note-content">
-
         <p>
           You don't have to have everything figured out today.
           Pahinga ka sakin, and always remember na you're doing great c:.
         </p>
-
       </div>
 
       <small class="tap-hint">
@@ -228,26 +206,22 @@
     </button>
 
 
-
     <button
       class="card note sealed"
+      type="button"
       onclick="openNote(this)"
       aria-label="Open note: when you miss me"
     >
 
       <div class="seal">♡</div>
 
-      <h3>
-        Open when you miss me
-      </h3>
+      <h3>Open when you miss me</h3>
 
       <div class="note-content">
-
         <p>
           Here's a tiny reminder that somewhere in this world,
           someone is very grateful that you became part of their life.
         </p>
-
       </div>
 
       <small class="tap-hint">
@@ -257,26 +231,22 @@
     </button>
 
 
-
     <button
       class="card note sealed"
+      type="button"
       onclick="openNote(this)"
       aria-label="Open note: when you're happy"
     >
 
       <div class="seal">♡</div>
 
-      <h3>
-        Open when you're happy
-      </h3>
+      <h3>Open when you're happy</h3>
 
       <div class="note-content">
-
         <p>
           I hope you keep that happiness for a long, long time.
           Your happy moments are worth celebrating.
         </p>
-
       </div>
 
       <small class="tap-hint">
@@ -286,26 +256,22 @@
     </button>
 
 
-
     <button
       class="card note sealed"
+      type="button"
       onclick="openNote(this)"
       aria-label="Open note: anytime"
     >
 
       <div class="seal">♡</div>
 
-      <h3>
-        Open anytime
-      </h3>
+      <h3>Open anytime</h3>
 
       <div class="note-content">
-
         <p>
           Thank you for choosing to let me know you,
           and for giving me the privilege to love you.
         </p>
-
       </div>
 
       <small class="tap-hint">
@@ -319,7 +285,6 @@
 </section>
 
 
-
 <!-- =========================
      SONGS
 ========================= -->
@@ -328,13 +293,9 @@
 
   <div class="section-head">
 
-    <div class="tiny">
-      our soundtrack
-    </div>
+    <div class="tiny">our soundtrack</div>
 
-    <h2>
-      Songs
-    </h2>
+    <h2>Songs</h2>
 
     <p>
       songs that remind me of you.
@@ -342,29 +303,18 @@
 
   </div>
 
-
   <div class="grid">
 
+    <article class="card song player-card" onclick="togglePlay(this)">
 
-    <article
-      class="card song player-card"
-      onclick="togglePlay(this)"
-    >
+      <div class="song-icon play-btn">▶</div>
 
-      <div class="song-icon play-btn">
-        ▶
-      </div>
-
-      <div>
-
-        <h3>
-          Intertwine
-        </h3>
+      <div class="song-info">
+        <h3>Intertwine</h3>
 
         <p>
           The Ridleys · Tap to play the music
         </p>
-
       </div>
 
       <audio
@@ -375,26 +325,16 @@
     </article>
 
 
+    <article class="card song player-card" onclick="togglePlay(this)">
 
-    <article
-      class="card song player-card"
-      onclick="togglePlay(this)"
-    >
+      <div class="song-icon play-btn">▶</div>
 
-      <div class="song-icon play-btn">
-        ▶
-      </div>
-
-      <div>
-
-        <h3>
-          Libu-libong buwan
-        </h3>
+      <div class="song-info">
+        <h3>Libu-libong buwan</h3>
 
         <p>
           Kyle Raphael · Tap to play the music
         </p>
-
       </div>
 
       <audio
@@ -405,26 +345,16 @@
     </article>
 
 
+    <article class="card song player-card" onclick="togglePlay(this)">
 
-    <article
-      class="card song player-card"
-      onclick="togglePlay(this)"
-    >
+      <div class="song-icon play-btn">▶</div>
 
-      <div class="song-icon play-btn">
-        ▶
-      </div>
-
-      <div>
-
-        <h3>
-          Dumaloy
-        </h3>
+      <div class="song-info">
+        <h3>Dumaloy</h3>
 
         <p>
           SUD · Tap to play the music
         </p>
-
       </div>
 
       <audio
@@ -439,7 +369,6 @@
 </section>
 
 
-
 <!-- =========================
      MEMORY JAR
 ========================= -->
@@ -448,51 +377,45 @@
 
   <div class="section-head">
 
-    <div class="tiny">
-      a little surprise
-    </div>
+    <div class="tiny">a little surprise</div>
 
-    <h2>
-      Our Memory Jar
-    </h2>
+    <h2>Our Memory Jar</h2>
 
     <p>
-      Tap a heart to pull out a random little thought.
+      Tap the jar or the button to pull out a random little thought.
     </p>
 
   </div>
-
 
   <div class="memory-jar-wrap">
 
     <div
       class="jar"
       id="jar"
-      aria-label="Memory jar"
+      role="button"
+      tabindex="0"
+      aria-label="Open memory jar"
     >
 
       <div class="jar-lid"></div>
 
       <div class="jar-body">
-
         <span>♡</span>
         <span>✦</span>
         <span>♡</span>
         <span>✧</span>
         <span>♡</span>
-
       </div>
 
     </div>
 
-
     <button
       class="button"
+      type="button"
       onclick="pickMemory()"
     >
       pick a memory ♡
     </button>
-
 
     <div
       class="memory-result"
@@ -515,7 +438,6 @@
 </section>
 
 
-
 <!-- =========================
      POLAROID GALLERY
 ========================= -->
@@ -524,13 +446,9 @@
 
   <div class="section-head">
 
-    <div class="tiny">
-      snapshots
-    </div>
+    <div class="tiny">snapshots</div>
 
-    <h2>
-      Mini Polaroid Gallery
-    </h2>
+    <h2>Mini Polaroid Gallery</h2>
 
     <p>
       Favourite pictures with you.
@@ -538,21 +456,16 @@
 
   </div>
 
-
   <div class="polaroids">
-
-
-    <!-- POLAROID 1 -->
 
     <div class="polaroid">
 
       <div class="photo">
-
         <img
           src="c8f0968a-f1ff-48ad-85d4-93b1b56a8812.jpg"
           alt="a favorite moment"
+          loading="lazy"
         >
-
       </div>
 
       <p class="caption">
@@ -562,18 +475,14 @@
     </div>
 
 
-
-    <!-- POLAROID 2 -->
-
     <div class="polaroid">
 
       <div class="photo">
-
         <img
           src="32817042-303e-45a3-978d-b0ff4d95a097.jpg"
-          alt="first picture :p"
+          alt="our first picture"
+          loading="lazy"
         >
-
       </div>
 
       <p class="caption">
@@ -583,18 +492,14 @@
     </div>
 
 
-
-    <!-- POLAROID 3 -->
-
     <div class="polaroid">
 
       <div class="photo">
-
         <img
           src="990c59af-bd1f-4eeb-9ef3-2705260d2bde.jpg"
-          alt="first date c:"
+          alt="our first date"
+          loading="lazy"
         >
-
       </div>
 
       <p class="caption">
@@ -603,18 +508,16 @@
 
     </div>
 
-
   </div>
 
 </section>
-
 
 
 <!-- =========================
      LETTER
 ========================= -->
 
-<section>
+<section id="letter">
 
   <div class="letter">
 
@@ -626,55 +529,87 @@
       Thank you for being you.
     </h2>
 
-    <p>
-      happy 1st monthsary, my love! &lt;3
-      <br><br>
+    <div class="letter-text">
 
-      looking back at this past month, all i can say is that everything has been complete magic. simula nung pumasok ka sa buhay ko,
-      i've genuinely been the happiest i've ever been. ang daming bagay na parang mas naging meaningful and special just because i get to experience them with you.
-      you have this beautiful way of turning ordinary days  into something so special, and to be honest , i can't imagine a single day without you in it anymore.
+      <p>
+        happy 1st monthsary, my love! &lt;3
+      </p>
 
-      <br><br>
+      <p>
+        looking back at this past month, all i can say is that everything has been
+        complete magic. simula nung pumasok ka sa buhay ko, i've genuinely been
+        the happiest i've ever been. ang daming bagay na parang mas naging meaningful
+        and special just because i get to experience them with you.
+      </p>
 
-      it's crazy to think na one month pa lang tayo, pero somehow, feels like you've already become such a big and important part of my life.
-      in such a short amount of time, you've given me so many memories that i know i'll always treasure. from our ramdom conversations, silly moments, and late-night talks, hanggang sa simpleng "i love you"
-      natin, everyt little thing with you means so much to me. even the quiet and ordinary moments feel different when they're shared with you.
+      <p>
+        you have this beautiful way of turning ordinary days into something so special,
+        and to be honest, i can't imagine a single day without you in it anymore.
+      </p>
 
-      <br><br>
+      <p>
+        it's crazy to think na one month pa lang tayo, pero somehow, it feels like
+        you've already become such a big and important part of my life.
+        in such a short amount of time, you've given me so many memories that i know
+        i'll always treasure.
+      </p>
 
-      thank you for everything. thank you for making me smile when i don’t even realize i need it, 
-      for listening to all my random thoughts, for staying up and talking with me, for your warmth, your patience, and for simply being yourself around me. 
-     i love how I can be myself with you without feeling like I have to pretend or be someone else. you make me feel comfortable, understood, 
-      and appreciated in ways that I’m really grateful for.
+      <p>
+        from our random conversations, silly moments, and late-night talks,
+        hanggang sa simpleng "i love you" natin, every little thing with you means
+        so much to me. even the quiet and ordinary moments feel different when
+        they're shared with you.
+      </p>
 
-      <br><br>
+      <p>
+        thank you for everything. thank you for making me smile when i don't even
+        realize i need it, for listening to all my random thoughts, for staying up
+        and talking with me, for your warmth, your patience, and for simply being
+        yourself around me.
+      </p>
 
-      loving you is honestly one of the easiest and most natural things i’ve ever done. i don’t need some big reason to love you.
-      i just do. i love you for who you are, for the way you make me feel,
-      for the little things you do without even realizing how much they mean to me, and for simply being the person you are.
+      <p>
+        i love how i can be myself with you without feeling like i have to pretend
+        or be someone else. you make me feel comfortable, understood, and appreciated
+        in ways that i'm really grateful for.
+      </p>
 
-    <br><br>
-     i hope simula pa lang to ng something evern more beautiful for us c: i can’t wait for more months, 
-      more memories, more late night conversations, more random moments, more laughter, and all the little things that we’ll get to experience together. 
-      whatever the future holds, 
-      i’m just really happy that i get to have you in my life and that i get to call you mine :p
+      <p>
+        loving you is honestly one of the easiest and most natural things i've ever done.
+        i don't need some big reason to love you. i just do.
+        i love you for who you are, for the way you make me feel, for the little things
+        you do without even realizing how much they mean to me, and for simply being
+        the person you are.
+      </p>
 
+      <p>
+        i hope simula pa lang to ng something even more beautiful for us c:
+        i can't wait for more months, more memories, more late night conversations,
+        more random moments, more laughter, and all the little things that we'll get
+        to experience together.
+      </p>
 
-      
-      happy 1st monthsary, my aki.
-      i love you so much &lt;3.
-    </p>
+      <p>
+        whatever the future holds, i'm just really happy that i get to have you
+        in my life and that i get to call you mine :p
+      </p>
 
-    <p>
+      <p class="final-line">
+        happy 1st monthsary, my aki.<br>
+        i love you so much &lt;3.
+      </p>
+
+    </div>
+
+    <div class="letter-signature">
       <b>September 1, 2026</b>
       <br>
-      more to come
-    </p>
+      more to come ♡
+    </div>
 
   </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -683,14 +618,13 @@
 
 <footer>
 
-  i love you with all my heart:)<br>
+  i love you with all my heart :)<br>
 
   <small>
     08.01.26
   </small>
 
 </footer>
-
 
 
 <script src="script.js"></script>
