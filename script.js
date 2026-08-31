@@ -32,7 +32,7 @@ function openNote(note) {
 }
 
 const memories = [
-  "The random conversations that somehow turn into our favorite talks. ♡",
+  "The random conversations that somehow turn into our favorite talks.",
   "That feeling when I see your name pop up on my screen.",
   "The little jokes that probably wouldn't make sense to anyone else.",
   "The moments where we can just be ourselves around each other.",
@@ -40,6 +40,8 @@ const memories = [
   "One day, we'll look back at these early memories and smile.",
   "You make ordinary moments feel worth keeping.",
   "I'm grateful for every chance I get to know another little part of you."
+  "First time we met."
+
 ];
 
 function pickMemory() {
