@@ -39,9 +39,8 @@ const memories = [
   "A reminder that our story is made from lots of tiny moments, not just big ones.",
   "One day, we'll look back at these early memories and smile.",
   "You make ordinary moments feel worth keeping.",
-  "I'm grateful for every chance I get to know another little part of you."
+  "I'm grateful for every chance I get to know another little part of you.",
   "First time we met."
-
 ];
 
 function pickMemory() {
