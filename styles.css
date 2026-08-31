@@ -760,6 +760,7 @@ p {
 }
 
 .letter {
+  width: 100%;
   max-width: 760px;
 
   margin: auto;
@@ -781,7 +782,6 @@ p {
   position: absolute;
 
   right: 22px;
-
   top: 14px;
 
   color: var(--pink);
@@ -790,15 +790,17 @@ p {
 }
 
 .letter-text {
+  margin-top: 25px;
+
   font-size: 1rem;
 
   line-height: 1.85;
 
-  margin-top: 25px;
+  overflow-wrap: break-word;
 }
 
 .letter-text p {
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 
 .letter-text .final-line {
@@ -806,7 +808,9 @@ p {
 
   font-size: 1.08rem;
 
-  margin-top: 28px;
+  margin-top: 30px;
+
+  margin-bottom: 0;
 }
 
 .letter-signature {
@@ -950,17 +954,23 @@ footer {
   }
 
   .letter {
-    padding: 30px 22px;
+    padding: 28px 18px;
   }
 
-}
+  .letter-text {
+    font-size: .96rem;
+    line-height: 1.75;
+  }
 
+  .letter-signature {
+    font-size: .85rem;
+  }
 
 /* =========================
    PHONE
 ========================= */
 
-@media (max-width: 470px) {
+@media (max-width: 470px)
 
   .nav-inner {
     gap: 4px;
